@@ -8,6 +8,9 @@ const connectDB = require("./config/connectDB");
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
+// Body parser
+app.use(express.urlencoded({ extended: false }));
+
 // Route
 app.use("/", require("./routes/welcome"));
 app.use("/users", require("./routes/users"));
